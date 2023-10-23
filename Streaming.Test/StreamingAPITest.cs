@@ -37,5 +37,25 @@ namespace Streaming.API.Test
             Assert.Equal(expectedResult.Message, result?.Message);
             
         }
+
+        [Fact]
+        public async Task Streaming_StopStream_ReturnsOk()
+        {
+            var videoId = Guid.NewGuid().ToString();
+            var expectedResult = new APIResponse<string>
+            {
+                Data = videoId,
+                Status = true,
+                Message = "Successful Operation"
+            };
+            using var application = new WebApplicationFactory<Program>();
+            var client = application.CreateClient();
+            var response = await client.GetAsync($"/api/StopStream/{videoId}");
+            Assert.NotNull(response.Content);
+            Assert.True(response.IsSuccessStatusCode);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            var resultString = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<APIResponse<string>>(resultString);
+        }
     }
 }
