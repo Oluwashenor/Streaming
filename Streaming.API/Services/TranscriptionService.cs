@@ -1,19 +1,12 @@
-﻿using Hangfire;
-using Streaming.API.Data;
+﻿using Streaming.API.Data;
 using Streaming.API.Models;
-using Streaming.API.Repository;
+using Streaming.API.Services.Interfaces;
 using Whisper.net;
 using Whisper.net.Ggml;
 
 namespace Streaming.API.Services
 {
-	public interface ITranscriptionService
-	{
-		Task<APIResponse<List<Transcript>>> ProcessTranscript(string wavFile);
-		Task<APIResponse<bool>> TranscribeAndSave(string video);
-		Task<APIResponse<List<Transcript>>> TranscribeVideo(string video);
-	}
-	public class TranscriptionService : ITranscriptionService
+    public class TranscriptionService : ITranscriptionService
     {
         private readonly AppDbContext _appDbContext;
         private readonly IMediaService _mediaService;

@@ -1,7 +1,7 @@
 ﻿using NAudio.Wave;
 using System.Diagnostics;
 using Streaming.API.Models;
-using Streaming.API.Repository;
+using Streaming.API.Services.Interfaces;
 
 namespace Streaming.API.Services
 {
@@ -82,11 +82,4 @@ namespace Streaming.API.Services
             return convertToWav.Status ? _responseService.SuccessResponse(convertToWav.Data) : _responseService.ErrorResponse<string>(convertToWav.Message);
         }
     }
-
-	public interface IMediaService
-	{
-		Task<APIResponse<string>> ConvertFormVideoToAudio(IFormFile video);
-		Task<APIResponse<string>> ConvertMp3ToWave(string mp3, string wav);
-		APIResponse<string> ExtractAudioFromVideo(string videoFilePath, string audio);
-	}
 }

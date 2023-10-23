@@ -1,8 +1,7 @@
-﻿
+﻿using Streaming.API.Models;
+using Streaming.API.Services.Interfaces;
 
-using Streaming.API.Models;
-
-namespace Streaming.API.Repository
+namespace Streaming.API.Services
 {
     public class ResponseService : IResponseService
     {

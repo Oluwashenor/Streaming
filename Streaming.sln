@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streaming.API", "Streaming.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streaming.UI", "Streaming.UI\Streaming.UI.csproj", "{4013870A-5714-4545-83A7-4E5890BD001C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streaming.Test", "Streaming.Test\Streaming.Test.csproj", "{B20ADBCE-881A-43BA-9315-8B7A4B4020D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streaming.API.Test", "Streaming.Test\Streaming.API.Test.csproj", "{B20ADBCE-881A-43BA-9315-8B7A4B4020D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

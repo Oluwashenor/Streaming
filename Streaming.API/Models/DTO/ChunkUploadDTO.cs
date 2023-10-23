@@ -1,10 +1,15 @@
-﻿namespace Streaming.API.Models.DTO
+﻿namespace Streaming.API.Models.DTO;
+
+public class ChunkUploadStringDTO
 {
-    public class ChunkUploadDTO
-    {
-        public byte[]? Chunk { get; set; }
-        public string? ChunkString { get; set; }
-        public string? Id { get; set; }
-        public DateTime Created { get; set; } = DateTime.Now;
-    }
+    public string? ChunkString { get; set; }
+    public string? Id { get; set; }
+    public DateTime Created { get; set; } = DateTime.Now;
+}
+
+public class ChunkUploadByteDTO
+{
+    public byte[]? Chunk { get; set; }
+    public string? Id { get; set; }
+    public DateTime Created { get; set; } = DateTime.Now;
 }

@@ -1,6 +1,6 @@
 ﻿using Streaming.API.Models;
 
-namespace Streaming.API.Repository
+namespace Streaming.API.Services.Interfaces
 {
     public interface IResponseService
     {
